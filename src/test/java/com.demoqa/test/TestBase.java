@@ -22,7 +22,6 @@ public class TestBase {
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
-        System.setProperty("remote", "YES");
         if (System.getProperty("remote").equals("YES")) {
             Configuration.browser = System.getProperty("browser_name");
             Configuration.browserVersion = System.getProperty("browser_version");
@@ -32,7 +31,6 @@ public class TestBase {
             Configuration.browser = "chrome";
             Configuration.browserSize = "1920x1180";
         }
-
     }
 
     @AfterEach
