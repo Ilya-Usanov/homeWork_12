@@ -12,15 +12,26 @@ public class TestBase {
 
     @BeforeAll
     static void configure() {
+        String LOGIN = "user1";
+        String PASSWORD = "1234";
+        String REMOTE = "https://" + LOGIN + ":" + PASSWORD + "@selenoid.autotests.cloud/wd/hub";
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-        Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        if (System.getProperty("REMOTE").equals("true")) {
+            Configuration.browser = System.getProperty("BROWSER_NAME");
+            Configuration.browserVersion = System.getProperty("BROWSER_VERSION");
+            Configuration.browserSize = System.getProperty("BROWSER_SIZE");
+            Configuration.remote = REMOTE;
+        } else {
+            Configuration.browser = "chrome";
+            Configuration.browserSize = "1920x1180";
+        }
+
     }
 
     @AfterEach
