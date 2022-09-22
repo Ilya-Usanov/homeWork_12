@@ -1,0 +1,9 @@
+5685474154:AAEilltVhfiAdmQiwqZI1XeT_fJkmlqMgwc
+
+https://api.telegram.org/bot5685474154:AAEilltVhfiAdmQiwqZI1XeT_fJkmlqMgwc/getUpdates
+
+java "-DconfigFile=notifications/telegram.json" -jar notifications/allure-notifications-4.2.1.jar
+
+-1001550277846
+
+curl -Method 'POST' -Body '{"chat_id":"-1001550277846", "text":"This is a test from guru", "disable_notification":true}' -H @{"Content-Type"="application/json"} -URI 'https://api.telegram.org/bot5685474154:AAEilltVhfiAdmQiwqZI1XeT_fJkmlqMgwc/sendMessage'
