@@ -1,0 +1,16 @@
+{
+  "base": {
+    "project": "notifications_homeWork_14",
+    "environment": "notifications_test",
+    "comment": "Well done",
+    "reportLink": "",
+    "language": "en",
+    "allureFolder": "build/reports/allure-report/allureReport",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "5685474154:AAEilltVhfiAdmQiwqZI1XeT_fJkmlqMgwc",
+    "chat": "-1001550277846",
+    "replyTo": ""
+  }
+}
